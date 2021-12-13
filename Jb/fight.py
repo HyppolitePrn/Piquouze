@@ -8,52 +8,86 @@ player = [10, 2, 0, ["Inventaire:", "Gel Hydroalcoolique"]]
 
 def check(player, monster):
     if monster[0] <= 0:
-        print("gg")
+        print("Vous avez gagné le combat !")
         return True
     elif player[0] <= 0:
-        print("ptdr")
-        return False
+        print("Vous êtes morts, unlucky happens")
+        return True
+
+def inventory(player):
+    for i in range(len(player[3])):
+        print(player[3][i])
+    print("Retour\n")
+    inv_choice = input("Que voulez-vous faire ?:\n")
+    if inv_choice == "Potion":
+        player[0] = player[0] + 5
+        if player[0] > 10:
+            player[0] = 10
+        player[3].remove("Gel Hydroalcoolique")
+        print(player)
+        system('cls')
+        return player, True
+    elif inv_choice == "Retour":
+        system('cls')
+        return player, False
+
+def player_atk(player, monster):
+    playerDamage = player[1] - monster[2]
+    if playerDamage > 0:    
+        monster[0] = monster[0] - playerDamage
+        print("Tu infliges", playerDamage, "dégats")
+        print("Monster HPs=", monster[0], "Player HPs=", player[0])
+        sleep(2)
+        system('cls')
+    else:
+        print("Tu as infligé 0 dégats")
+        sleep(1)
+    return player, monster
+
+def monster_attack(player, monster):
+    print("Le monstre attaque !")
+    sleep(1)
+    monsterDamage = monster[1] - player[2]
+    if monsterDamage > 0:
+        player[0] = player[0] - monsterDamage
+        print("Il vous inflige", monsterDamage, "dégats")
+    else:
+        print("Tu n'as subi aucun dégat")
+    sleep(1)
+    return player, monster
 
 def fight(player, monster):
-    i = 0
-    print("Vous engagez le combat contre", monster[3])
+    #print("Vous engagez le combat contre", monster[3])
     while (player[0] > 0 and monster[0] > 0):
-        sleep(1)
-        print("Monster HPs =", monster[0], "Player HPs=", player[0])
-        choice = input("player choice:\n -atk\n -inv\n")
-        while choice != "atk" and choice != "inv":
+        sleep(0.3)
+        print("Monster HPs=", monster[0], "Player HPs=", player[0])
+        choice = input("Que voulez-vous faire ?:\n -atk\n -inv\n -vax\n")
+        while choice != "atk" and choice != "inv" and choice != "vax":
             choice = input()
         system('cls')
-
-        if choice == "atk":
-            pDmg = player[1] - monster[2]
-            if pDmg > 0:    
-                monster[0] = monster[0] - pDmg
+        while choice == "inv":
+            player, action = inventory(player)
+            if action !=True:
+                fight(player, monster)
+            break
+        if choice == "vax":
+            if monster[0] <= 3:
+                print("Vous avez sauvé le", monster[3])
+                sleep(1)
+                system('cls')
+                return(player)
             else:
-                print("Tu as infligé 0 dégats")
-            sleep(1)
-            print("mHP=", monster[0], "pHP=", player[0])
+                print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
+                sleep(1.5)
+                system('cls')
+                fight(player, monster)
+        if choice == "atk":
+            player, monster = player_atk(player, monster)
             if check(player, monster) == True:
-                return player
-        
-        if choice == "inv":
-            for i in range(len(player[3])):
-                print(player[3][i])
-            print("Retour\n")
-            inv_choice = input("Que voulez-vous faire ?:\n")
-            if inv_choice == "Potion":
-                player[0] = player[0] + 5
-            elif inv_choice == "Retour":
-                 choice = input("player choice:\n -atk\n -inv\n")   
-        print("monster atk")
-        mDmg = monster[1] - player[2]
-        if mDmg > 0:
-            player[0] = player[0] - mDmg
-        else:
-            print("Tu n'as subi aucun dégat")
-            sleep(1)
-            #system('cls')
-        check(player, monster)
+                break
+        player, monster = monster_attack(player, monster)
+        if check(player, monster) == True:
+            break
     return player
 
 fight(player, xavitna)
