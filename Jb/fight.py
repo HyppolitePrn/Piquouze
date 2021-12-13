@@ -75,7 +75,7 @@ def fight(player, monster):
                 print("Vous avez sauvé le", monster[3])
                 sleep(1)
                 system('cls')
-                return(player)
+                break
             else:
                 print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
                 sleep(1.5)
