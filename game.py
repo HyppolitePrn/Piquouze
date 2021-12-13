@@ -1,4 +1,0 @@
-def game():
-    return
-
-game()
