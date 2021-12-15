@@ -4,7 +4,7 @@ from time import sleep
 xavitna = [5, 6, 0, "Xavitna"]
 seukitpes = [8, 3, 0, "Seukitpes"]
 boss = [50, 30, 0, "Boss"]
-player = [10, 2, 0, ["Inventaire:", "Gel Hydroalcoolique"]]
+player = [10, 2, 0, ["Inventaire:", "Gel Hydroalcoolique"], "xp", "lvl"]
 
 def check(player, monster):
     if monster[0] <= 0:
@@ -23,8 +23,11 @@ def inventory(player):
         player[0] = player[0] + 5
         if player[0] > 10:
             player[0] = 10
+            print("Vous récupérez toute votre vie")
+        else:
+            print("Vous récupérez 5 pvs")
         player[3].remove("Gel Hydroalcoolique")
-        print(player)
+        sleep(2)
         system('cls')
         return player, True
     elif inv_choice == "Retour":
@@ -36,7 +39,8 @@ def player_atk(player, monster):
     if playerDamage > 0:    
         monster[0] = monster[0] - playerDamage
         print("Tu infliges", playerDamage, "dégats")
-        print("Monster HPs=", monster[0], "Player HPs=", player[0])
+        sleep(1)
+        print(f"{monster[3]} HPs=", monster[0], "Player HPs=", player[0])
         sleep(2)
         system('cls')
     else:
@@ -45,7 +49,7 @@ def player_atk(player, monster):
     return player, monster
 
 def monster_attack(player, monster):
-    print("Le monstre attaque !")
+    print(f"Le {monster[3]} attaque !")
     sleep(1)
     monsterDamage = monster[1] - player[2]
     if monsterDamage > 0:
@@ -54,40 +58,58 @@ def monster_attack(player, monster):
     else:
         print("Tu n'as subi aucun dégat")
     sleep(1)
+    system('cls')
     return player, monster
 
-def fight(player, monster):
+def vaccine(monster):
+    if monster[0] <= 3:
+        print("Vous avez sauvé le", monster[3])
+        sleep(1)
+        system('cls')
+        return True
+    else:
+        print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
+        sleep(2)
+        system('cls')
+        return False
+
+def select(player, monster):
+    print(monster[3], "HPs=", monster[0], "Player HPs=", player[0])
+    choice = input("Que voulez-vous faire ?:\n -atk\n -inv\n -vax\n")
+    return choice
+
+def battle(player, monster):
+    vax = False
     #print("Vous engagez le combat contre", monster[3])
     while (player[0] > 0 and monster[0] > 0):
         sleep(0.3)
-        print("Monster HPs=", monster[0], "Player HPs=", player[0])
-        choice = input("Que voulez-vous faire ?:\n -atk\n -inv\n -vax\n")
+        choice = select(player, monster)
         while choice != "atk" and choice != "inv" and choice != "vax":
             choice = input()
         system('cls')
         while choice == "inv":
+            system('cls')
             player, action = inventory(player)
             if action !=True:
-                fight(player, monster)
-            break
-        if choice == "vax":
-            if monster[0] <= 3:
-                print("Vous avez sauvé le", monster[3])
-                sleep(1)
                 system('cls')
-                break
+                choice = select(player, monster)
             else:
-                print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
-                sleep(1.5)
+                break
+        while choice == "vax":
+            vax = vaccine(monster)
+            if vax == True:
+                return player
+            else:
+                choice = select(player, monster)
                 system('cls')
-                fight(player, monster)
         if choice == "atk":
             player, monster = player_atk(player, monster)
             if check(player, monster) == True:
                 break
-        player, monster = monster_attack(player, monster)
+        if vax != True:
+            player, monster = monster_attack(player, monster)
         if check(player, monster) == True:
             break
     return player
 
-fight(player, xavitna)
+battle(player, xavitna)
