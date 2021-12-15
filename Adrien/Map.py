@@ -8,14 +8,14 @@ def map_print(Avion, Terminal, Hall, Parking,os, hall_loc, terminal_loc, avion_l
         system("cls")
     print(("________")* 11)
     print("\n")
-    if avion_loc == 1:
+    if avion_loc == "1":
         print((space * 6), "Boss", Boss)
         for v in Avion:
             print((space * 3), "Avion", v)
-    if terminal_loc == 1:
+    if terminal_loc == "1":
         for v in Terminal:
             print((space * 21), "Terminal", v)
-    if hall_loc == 1:
+    if hall_loc == "1":
         for v in Hall:
             print((space * 11), "Hall", v)
     for v in Parking:
