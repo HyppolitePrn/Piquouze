@@ -8,6 +8,7 @@ from duty_free import duty_free
 from liste import player
 from liste import list_sell
 from liste import menu_ig
+from mini_jeux import *
 
 def move(direction, position):
     shape = "[ ]"
@@ -563,17 +564,26 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
         if Parking[2][3] == user:
             if citoyen1 == "1":
                 citoyen_print(os)
-                citoyen1 = "0"
+                jeux = pierre_feuille_ciseaux(os)
+                if jeux == "win":
+                    player[3][1] += 100
+                    citoyen1 = "0"
         # je défini la zone de citoyen
         if Avion[3][2] == user:
             if citoyen2 == "1":
                 citoyen_print(os)
-                citoyen2 = "0"
+                jeux = lancer_de(os)
+                if jeux == "win":
+                    player[3][1] += 100
+                    citoyen2 = "0"
         # je défini la zone de citoyen
         if Terminal[1][2] == user:
             if citoyen3 == "1":
                 citoyen_print(os)
-                citoyen3 = "0"
+                jeux = just_prix()
+                if jeux == "win":
+                    player[3][1] += 100
+                    citoyen3 = "0"
         # je rallume l'interupteur pour afficher le duty free
         if Hall[2][0] != user:
             duty_map = "1"
