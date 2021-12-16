@@ -5,6 +5,7 @@ from Mac_or_wind import os
 from liste import start
 from duty_free import duty_free
 from liste import player
+from liste import list_sell
 
 def move(direction, position):
     shape = "[ ]"
@@ -521,7 +522,14 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
         # je défini le zone de duty freeing
         if Hall[2][0] == user:
             duty_print(os)
-            duty_free(player, menu_nav())
+            if os == "mac":
+                from menu_nav_mac import menu_nav_mac
+                sell = menu_nav_mac(list_sell)
+                duty_free(player, sell)
+            if os == "windows":
+                from Menu_nav import menu_nav
+                sell = menu_nav(list_sell)
+                duty_free(player, sell)
             duty_map = "0"
             duty = "1"
         # je défini la zone de citoyen

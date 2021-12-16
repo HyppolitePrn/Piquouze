@@ -17,7 +17,9 @@ def list_fight():
 
 
 
-list_sell = ["Gel Hydro (soin) X g",
+list_sell = [
+    "Articles:",
+    "Gel Hydro (soin) X g",
     "Masque chirurgical (defense), Xg",
     "Blouse de bataille (defense) Xg",
     "Seringue en adamantium (attaque) Xg",
