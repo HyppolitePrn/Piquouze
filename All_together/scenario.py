@@ -1,9 +1,14 @@
 from time import sleep
 from Move import first_localisation
 from getch_on_mac import getch_mac
+from os import system
+from Mac_or_wind import os
 
 def plot():
-    sleep(1)
+    if os == "mac":
+        system("clear")
+    if os == "windows":
+        system("cls")
     print("An 20XX,")
     sleep(1)
     print("Le Divoc 19 s'est propagé dans le monde, réveillant les pulsions les plus sombres de chaque individu")
