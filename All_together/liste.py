@@ -38,3 +38,4 @@ player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:",
     ["Inventaire:", "Gel Hydroalcoolique", "Retour"], 
     ["Equipement:"], 
     ["Argent:", 0]]
+

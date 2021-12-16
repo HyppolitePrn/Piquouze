@@ -152,6 +152,66 @@ def avion_print(os):
         system("cls")
     return
 
-def description_hall():
-    pass
+def stat_print(player, os):
+    next = "["
+    while next == "[":
+        if os == "mac":
+            from getch_on_mac import getch_mac
+            system("clear")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[0])
+            print("    appuyez sur une touche pour continuer")
+            next = getch_mac()
+        if os == "windows":
+            from msvcrt import getch
+            system("cls")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[0])
+            print("    appuyez sur une touche pour continuer")
+            next = getch()
+    return
+        
+def equipement_print(player, os):
+    next = "["
+    while next == "[":
+        if os == "mac":
+            from getch_on_mac import getch_mac
+            system("clear")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[2])
+            print("    appuyez sur une touche pour continuer")
+            next = getch_mac()
+        if os == "windows":
+            from msvcrt import getch
+            system("cls")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[2])
+            print("    appuyez sur une touche pour continuer")
+            next = getch()
+    return
+
+def argent_print(player, os):
+    next = "["
+    while next == "[":
+        if os == "mac":
+            from getch_on_mac import getch_mac
+            system("clear")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[3])
+            print("    appuyez sur une touche pour continuer")
+            next = getch_mac()
+        if os == "windows":
+            from msvcrt import getch
+            system("cls")
+            print(("________")* 11)
+            print("\n")
+            print("   ", *player[3])
+            print("    appuyez sur une touche pour continuer")
+            next = getch()
+    return
 
