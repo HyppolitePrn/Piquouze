@@ -3,6 +3,7 @@ from Affichage import *
 from fight import battle
 from Mac_or_wind import os
 from levels import player
+from liste import start
 
 
 def move(direction, position):
@@ -90,12 +91,33 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
     
 
     while stop == " ":
+        xavitna = [5, 6, 0, "Xavitna"]
+        seukitpes = [8, 3, 0, "Seukitpes"]
         map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
         print("   Pour vous déplacer")
         direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+        while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
         if direction.lower() == "stop":
                 stop = "stop"
+        if direction.lower() == "menu":
+            if os == "mac":
+                from menu_nav_mac import menu_nav_mac
+                menu_nav_mac(start())
+            if os == "windows":
+                from Menu_nav import menu_nav
+                menu_nav(start())
+        if direction.lower() == "inventaire":
+            if os == "mac":
+                from menu_nav_mac import menu_nav_mac
+                menu_nav_mac(player[1])
+            if os == "windows":
+                from Menu_nav import menu_nav
+                menu_nav(player[1])
 
         if localisation == Parking:
             Parking = move(direction, Parking)
@@ -124,8 +146,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "z":
                 Parking[0][0] = shape
                 localisation = Hall
@@ -144,8 +185,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "s":
                 Hall[2][3] = shape
                 localisation = Parking
@@ -161,8 +221,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "z":
                 Hall[0][2] = shape
                 localisation = Terminal
@@ -180,8 +259,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "z":
                 Hall[0][3] = shape
                 localisation = Terminal
@@ -200,8 +298,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "s":
                 Terminal[3][0] = shape
                 localisation = Hall
@@ -216,8 +333,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "s":
                 Terminal[3][1] = shape
                 localisation = Hall
@@ -233,8 +369,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "z":
                 Terminal[0][0] = shape
                 localisation = Avion
@@ -253,8 +408,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "s":
                 Avion[4][3] = shape
                 localisation = Terminal
@@ -270,8 +444,27 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "stop" and direction.lower() != "inventaire" and direction.lower() != "menu":
+                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                print("   Tapez 'inventaire' 'menu' pour accéder aux contenues associé.")
+                print("   Pour vous déplacer")
+                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
             if direction.lower() == "stop":
                 stop = "stop"
+            if direction.lower() == "menu":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(start())
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(start())
+            if direction.lower() == "inventaire":
+                if os == "mac":
+                    from menu_nav_mac import menu_nav_mac
+                    menu_nav_mac(player[1])
+                if os == "windows":
+                    from Menu_nav import menu_nav
+                    menu_nav(player[1])
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")
                 while beat_the_boss.lower() != "o" and beat_the_boss != "n":
