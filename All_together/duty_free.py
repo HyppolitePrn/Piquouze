@@ -1,10 +1,5 @@
-list_sell = ["Gel Hydro (soin) X g",
-    "Masque chirurgical (defense), Xg",
-    "Blouse de bataille (defense) Xg",
-    "Seringue en adamantium (attaque) Xg",
-    "Retour"
+from liste import list_sell
 
-]
 def duty_free(gold,player):
     choice = menu_nav(list_sell)
     if choice == "Potion":
