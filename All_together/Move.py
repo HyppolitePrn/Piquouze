@@ -524,12 +524,12 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             duty_print(os)
             if os == "mac":
                 from menu_nav_mac import menu_nav_mac
-                sell = menu_nav_mac(list_sell)
-                duty_free(player, sell)
+                sell_fonction = menu_nav_mac(list_sell)
+                duty_free(player, sell_fonction, list_sell)
             if os == "windows":
                 from Menu_nav import menu_nav
-                sell = menu_nav(list_sell)
-                duty_free(player, sell)
+                sell_fonction = menu_nav(list_sell)
+                duty_free(player, sell_fonction, list_sell)
             duty_map = "0"
             duty = "1"
         # je défini la zone de citoyen
