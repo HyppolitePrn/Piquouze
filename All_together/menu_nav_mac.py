@@ -46,11 +46,19 @@ def menu_nav_mac(menu):
         return "Potion"
     elif menu[i] == "Retour":
         return "Retour"
-    elif menu[i] == "Masque chirurgical":
+    elif menu[i] == "Masque chirurgical (defense), Xg":
         return "Masque chirurgical"
-    elif menu[i] == "Blouse de bataille":
+    elif menu[i] == "Blouse de bataille (defense) Xg":
         return "Blouse de bataille"
-    elif menu[i] == "Seringue en adamantium":
+    elif menu[i] == "Seringue en adamantium (attaque) Xg":
         return "Seringue en adamantium"
+    elif menu[i] == "Stats":
+        return "stats"
+    elif menu[i] == "Inventaire":
+        return "inv"
+    elif menu[i] == "Equipement":
+        return "equipment"
+    elif menu[i] == "Gold":
+        return "gold"
     else:
         menu_nav_mac(start())
