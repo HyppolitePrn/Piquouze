@@ -23,3 +23,11 @@ list_sell = ["Gel Hydro (soin) X g",
     "Seringue en adamantium (attaque) Xg",
     "Retour"
 ]
+
+menu_ig = ["Menu:", 
+    "Stats", 
+    "Inventaire",
+    "Equipement"
+    "Gold",
+    "Retour"
+]
