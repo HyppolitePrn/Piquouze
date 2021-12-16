@@ -29,8 +29,8 @@ list_sell = [
 menu_ig = ["Menu:", 
     "Stats", 
     "Inventaire",
-    "Equipement"
-    "Gold",
+    "Equipement",
+    "Argent",
     "Retour"
 ]
 

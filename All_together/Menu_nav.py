@@ -59,7 +59,7 @@ def menu_nav(menu):
         return "inv"
     elif menu[i] == "Equipement":
         return "equipment"
-    elif menu[i] == "Gold":
-        return "gold"
+    elif menu[i] == "Argent":
+        return "argent"
     else:
         menu_nav(start())

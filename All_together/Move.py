@@ -6,6 +6,7 @@ from liste import start
 from duty_free import duty_free
 from liste import player
 from liste import list_sell
+from liste import menu_ig
 
 def move(direction, position):
     shape = "[ ]"
@@ -108,17 +109,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
         if direction.lower() == "menu":
             if os == "mac":
                 from menu_nav_mac import menu_nav_mac
-                menu_nav_mac(start())
+                menu_nav_mac(menu_ig)
             if os == "windows":
                 from Menu_nav import menu_nav
-                menu_nav(start())
-        if direction.lower() == "inventaire":
-            if os == "mac":
-                from menu_nav_mac import menu_nav_mac
-                menu_nav_mac(player[1])
-            if os == "windows":
-                from Menu_nav import menu_nav
-                menu_nav(player[1])
+                menu_nav(menu_ig)
 
         if localisation == Parking:
             Parking = move(direction, Parking)
@@ -157,17 +151,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "z":
                 Parking[0][0] = shape
                 localisation = Hall
@@ -196,17 +183,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "s":
                 Hall[2][3] = shape
                 localisation = Parking
@@ -232,17 +212,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "z":
                 Hall[0][2] = shape
                 localisation = Terminal
@@ -270,17 +243,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "z":
                 Hall[0][3] = shape
                 localisation = Terminal
@@ -309,17 +275,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "s":
                 Terminal[3][0] = shape
                 localisation = Hall
@@ -344,17 +303,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "s":
                 Terminal[3][1] = shape
                 localisation = Hall
@@ -380,17 +332,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "z":
                 Terminal[0][0] = shape
                 localisation = Avion
@@ -419,17 +364,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "s":
                 Avion[4][3] = shape
                 localisation = Terminal
@@ -455,17 +393,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "menu":
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(start())
+                    menu_nav_mac(menu_ig)
                 if os == "windows":
                     from Menu_nav import menu_nav
-                    menu_nav(start())
-            if direction.lower() == "inventaire":
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    menu_nav_mac(player[1])
-                if os == "windows":
-                    from Menu_nav import menu_nav
-                    menu_nav(player[1])
+                    menu_nav(menu_ig)
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")
                 while beat_the_boss.lower() != "o" and beat_the_boss != "n":
