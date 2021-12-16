@@ -47,11 +47,13 @@ def menu_nav(menu):
         return "Potion"
     elif menu[i] == "Retour":
         return "Retour"
-    elif menu[i] == "Masque chirurgical":
+    elif menu[i] == "Gel Hydro (soin) X g":
+        return "Potion"
+    elif menu[i] == "Masque chirurgical (defense), Xg":
         return "Masque chirurgical"
-    elif menu[i] == "Blouse de bataille":
+    elif menu[i] == "Blouse de bataille (defense) Xg":
         return "Blouse de bataille"
-    elif menu[i] == "Seringue en adamantium":
+    elif menu[i] == "Seringue en adamantium (attaque) Xg":
         return "Seringue en adamantium"
     else:
         menu_nav(start())
