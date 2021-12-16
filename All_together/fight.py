@@ -157,6 +157,8 @@ def battle(player, monster, os):
         while choice == "vax":
             vax = vaccine(monster, os)
             if vax == True:
+                player[3][1] += 10
+                print("Pour vous remercier, la personne vous donne 10 d'argent")
                 return player
             else:
                 if os == "mac":
@@ -179,10 +181,14 @@ def battle(player, monster, os):
             player, monster = player_atk(player, monster, os)
             if check(player, monster) == True:
                 lvl_up(player)
+                player[3][1] += 10
+                print("Vous récupérez 10 d'argent")
                 break
         if vax != True:
             player, monster = monster_attack(player, monster, os)
         if check(player, monster) == True:
             lvl_up(player)
+            player[3][1] += 10
+            print("Vous récupérez 10 d'argent")
             break
     return player

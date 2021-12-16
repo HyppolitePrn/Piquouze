@@ -19,10 +19,10 @@ def list_fight():
 
 list_sell = [
     "Articles:",
-    "Gel Hydro (soin) X g",
-    "Masque chirurgical (defense), Xg",
-    "Blouse de bataille (defense) Xg",
-    "Seringue en adamantium (attaque) Xg",
+    "Gel Hydroalcoolique +5 hp (soin) : 10 ",
+    "Masque chirurgical +1 défense : 100",
+    "Blouse de bataille +3 défense : 100",
+    "Seringue en adamantium +3 attaque : 100",
     "Retour"
 ]
 
