@@ -8,7 +8,7 @@ list_sell = ["Gel Hydro (soin) X g",
 def duty_free(gold,player):
     choice = menu_nav(list_sell)
     if choice == "Potion":
-        player[1].append("Gel Hydroalcoolique")
+        player[1].insert(len(player) - 2, "Gel Hydroalcoolique")
         gold = gold - heal_price 
 
         return gold, list_sell, player
