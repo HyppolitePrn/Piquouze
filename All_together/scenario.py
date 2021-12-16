@@ -17,7 +17,7 @@ def plot():
     sleep(2)
     print("Seul problème, la zone de déploiement, l'aéroport de ***, est submergé d'infectés.")
     sleep(2)
-    print("Vous vous êtes porté volontaire pour d'ouvrir le passage afin de transmettre le vaccin au monde.")
+    print("Vous vous êtes porté volontaire pour ouvrir le passage afin de transmettre le vaccin au monde.")
     sleep(2)
     print("Accéder à la piste de lancement ne sera pas chose facile.")
     sleep(2)

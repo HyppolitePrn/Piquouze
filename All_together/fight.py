@@ -72,6 +72,10 @@ def vaccine(monster, os):
             system("cls")
         return True
     else:
+        if os == "mac":
+            system("clear")
+        if os == "windows":
+            system("cls")
         print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
         sleep(2)
         if os == "mac":
@@ -157,10 +161,20 @@ def battle(player, monster, os):
             else:
                 if os == "mac":
                     choice = menu_nav_mac(list_fight())
-                    system("clear")
+                    while choice == "inv":
+                        system("clear")
+                        player, action = inventory(player, os)
+                        if action !=True:
+                            choice = menu_nav(list_fight())
+                            system("clear")
                 if os == "windows":
                     choice = menu_nav(list_fight())
-                    system("cls")
+                    while choice == "inv":
+                        system("cls")
+                        player, action = inventory(player, os)
+                        if action !=True:
+                            choice = menu_nav(list_fight())
+                            system("cls")
         if choice == "atk":
             player, monster = player_atk(player, monster, os)
             if check(player, monster) == True:
