@@ -1,6 +1,9 @@
 from time import sleep
-#player = [["Stats", "Pv:", 10, "Attaque:", 2, "Défense:", 0, "Lvl:", 1, "XP:", 10, "/10"], ["Inventaire:", "Gel Hydroalcoolique"], ["Equipement:"]]
-player = [["Stats:", "Pv:", 10, "Attaque:", 4, "Défense:", 0, "Lvl:", 1, "XP:", 0], ["Inventaire:", "Gel Hydroalcoolique"], ["Equipement:"]]
+from ends import good_ending
+from ends import ending
+from ends import bad_ending
+
+player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:", 0], ["Inventaire:", "Gel Hydroalcoolique", "Retour"], ["Equipement:"]]
 
 
 def lvl_up(player):
@@ -14,12 +17,11 @@ def lvl_up(player):
         print("Vous gagnez +3 Pvs, +1 Attaque")
         sleep(1)
     return player
-"""
+
 def end(player):
     if player[0][8] <= 2:
         good_ending()
     elif player[0][8] > 2 and player[0][8] < 5:
         ending()
-    else
+    else:
         bad_ending()
-""" 

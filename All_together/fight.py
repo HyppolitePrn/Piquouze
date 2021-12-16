@@ -4,9 +4,6 @@ from levels import lvl_up
 from liste import list_fight
 
 def inventory(player, os):
-    for i in range(len(player[1])):
-        print(player[1][i])
-    print("Retour\n")
     if os == "mac":
         from menu_nav_mac import menu_nav_mac
         inv_choice = menu_nav_mac(player[1])
@@ -56,7 +53,7 @@ def check(player, monster):
     if monster[0] <= 0:
         print("Vous avez gagné le combat !")
         sleep(1)
-        print("Vous gagnez 10 points d'expérience")
+        print("Vous gagnez 10 points d'expérience !")
         player[0][10] += 10
         return True
     elif player[0][2] <= 0:
@@ -67,7 +64,7 @@ def vaccine(monster, os):
     if monster[0] <= 3:
         print("Vous avez sauvé le", monster[3])
         sleep(1)
-        print("Vous avez gagné 2 points d'expérience")
+        print("Vous avez gagné 2 points d'expérience !")
         sleep(1)
         if os == "mac":
             system("clear")
