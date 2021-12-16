@@ -3,9 +3,6 @@ from ends import good_ending
 from ends import ending
 from ends import bad_ending
 
-player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:", 0], ["Inventaire:", "Gel Hydroalcoolique", "Retour"], ["Equipement:"]]
-
-
 def lvl_up(player):
     if player[0][10] == 10:
         player[0][8] += 1

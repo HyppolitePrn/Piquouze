@@ -31,3 +31,8 @@ menu_ig = ["Menu:",
     "Gold",
     "Retour"
 ]
+
+player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:", 0], 
+    ["Inventaire:", "Gel Hydroalcoolique", "Retour"], 
+    ["Equipement:"], 
+    ["Argent:", 0]]

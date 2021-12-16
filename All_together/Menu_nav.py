@@ -63,12 +63,3 @@ def menu_nav(menu):
         return "gold"
     else:
         menu_nav(start())
-
-# os = wich_os()
-# if os == "linux":
-#     os = "mac"
-# if os == "mac":
-#     menu_nav_mac(start())
-# if os == "windows":
-#     from msvcrt import getch
-#     menu_nav(start())

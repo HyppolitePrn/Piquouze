@@ -2,10 +2,9 @@ from Map import *
 from Affichage import *
 from fight import battle
 from Mac_or_wind import os
-from levels import player
 from liste import start
 from duty_free import duty_free
-
+from liste import player
 
 def move(direction, position):
     shape = "[ ]"
@@ -522,7 +521,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
         # je défini le zone de duty freeing
         if Hall[2][0] == user:
             duty_print(os)
-            duty_free()
+            duty_free(player, menu_nav())
             duty_map = "0"
             duty = "1"
         # je défini la zone de citoyen
