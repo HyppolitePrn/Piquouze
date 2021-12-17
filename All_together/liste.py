@@ -10,12 +10,9 @@ def start():
         ]
     return menu
 
-
 def list_fight():
     liste_fight =["Que voulez-vous faire ?","attaquer","inventaire","vacciner"]
     return liste_fight
-
-
 
 list_sell = [
     "Articles:",
@@ -26,16 +23,15 @@ list_sell = [
     "Retour"
 ]
 
-menu_ig = ["Menu:", 
-    "Stats", 
+menu_ig = ["Menu:",
+    "Stats",
     "Inventaire",
     "Equipement",
     "Argent",
     "Retour"
 ]
 
-player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:", 0], 
-    ["Inventaire:", "Gel Hydroalcoolique", "Retour"], 
-    ["Equipement:"], 
+player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:", 0],
+    ["Inventaire:", "Gel Hydroalcoolique", "Retour"],
+    ["Equipement:"],
     ["Argent:", 0]]
-
