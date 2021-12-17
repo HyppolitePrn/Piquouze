@@ -63,4 +63,4 @@ def menu_nav_mac(menu):
     elif menu[i] == "Argent":
         return "argent"
     else:
-        menu_nav_mac(start())
+        menu_nav_mac(menu)
