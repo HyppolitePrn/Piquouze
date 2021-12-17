@@ -48,9 +48,9 @@ def menu_nav_mac(menu):
         return "Retour"
     elif menu[i] == "Gel Hydroalcoolique +5 hp (soin) : 10 ":
         return "Potion"
-    elif menu[i] == "Masque chirurgical +1 défense : 100":
+    elif menu[i] == "Masque chirurgical + 1 défense : 100":
         return "Masque chirurgical"
-    elif menu[i] == "Blouse de bataille +3 défense : 100":
+    elif menu[i] == "Blouse de bataille + 3 défense : 100":
         return "Blouse de bataille"
     elif menu[i] == "Seringue en adamantium +3 attaque : 100":
         return "Seringue en adamantium"
