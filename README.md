@@ -3,16 +3,16 @@ Projet RPG textuel en Python W1 HETIC
 
 Réalisé par :
 
--Abdoulaye Diallo
--Adrien Quimbre
--Hyppolite Pernot
--Jean-Baptiste Migone
+<br /> -Abdoulaye Diallo
+<br /> -Adrien Quimbre
+<br /> -Hyppolite Pernot
+<br /> -Jean-Baptiste Migone
 ______________________________________
 
 Pour lancer le jeu :
 
 Sur windows :
-    py start_the_game.py
+    py All_together/start_the_game.py
 
 Sur MacOS : 
-    python3 start_the_game.py
+    python3 All_together/start_the_game.py
