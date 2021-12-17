@@ -12,7 +12,7 @@ ______________________________________
 Pour lancer le jeu :
 
 Sur windows :
-    py start_the_game.py
+    py All_together/start_the_game.py
 
 Sur MacOS : 
-    python3 start_the_game.py
+    python3 All_together/start_the_game.py
