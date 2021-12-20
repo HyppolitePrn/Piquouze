@@ -13,7 +13,7 @@ RESET   = '\033[39m'
 def fight_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(RED, '''
 
@@ -29,14 +29,14 @@ def fight_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
 def duty_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(YELLOW, '''
                             ██████╗ ██╗   ██╗████████╗██╗   ██╗
@@ -57,14 +57,14 @@ def duty_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
 def citoyen_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(BLUE,'''
                      ██████╗██╗████████╗ ██████╗ ██╗   ██╗███████╗███╗   ██╗
@@ -85,14 +85,14 @@ def citoyen_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
 def hall_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(GREEN,'''
                                 ██╗  ██╗ █████╗ ██╗     ██╗     
@@ -106,14 +106,14 @@ def hall_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
 def terminal_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(GREEN,'''
                      ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     
@@ -127,14 +127,14 @@ def terminal_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
 def avion_print(os):
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(GREEN,'''
                              █████╗ ██╗   ██╗██╗ ██████╗ ███╗   ██╗
@@ -148,7 +148,7 @@ def avion_print(os):
     sleep(2)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return
 
@@ -163,7 +163,7 @@ def stat_print(player, os):
             print("   ", *player[0])
             print("    appuyez sur une touche pour continuer")
             next = getch_mac()
-        if os == "windows":
+        elif os == "windows":
             from msvcrt import getch
             system("cls")
             print(("________")* 11)
@@ -184,7 +184,7 @@ def equipement_print(player, os):
             print("   ", *player[2])
             print("    appuyez sur une touche pour continuer")
             next = getch_mac()
-        if os == "windows":
+        elif os == "windows":
             from msvcrt import getch
             system("cls")
             print(("________")* 11)
@@ -205,7 +205,7 @@ def argent_print(player, os):
             print("   ", *player[3])
             print("    appuyez sur une touche pour continuer")
             next = getch_mac()
-        if os == "windows":
+        elif os == "windows":
             from msvcrt import getch
             system("cls")
             print(("________")* 11)

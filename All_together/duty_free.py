@@ -32,6 +32,6 @@ def duty_free(player, choice, sell, os):
             player[3][1] -= 100
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return choice

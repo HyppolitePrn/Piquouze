@@ -6,7 +6,7 @@ from Mac_or_wind import os
 def good_ending():
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print("Grâce à vos actions, le déploiement du vaccin a pu se faire aussi vite que possible.")
     sleep(2)
@@ -20,7 +20,7 @@ def good_ending():
 def ending():
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print("C'est tant bien que mal que vous réussissez à accomplir votre mission.")
     sleep(2)
@@ -34,7 +34,7 @@ def ending():
 def bad_ending():
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print("Désormais, plus personne ne peut se mettre en travers de votre route.")
     sleep(2)

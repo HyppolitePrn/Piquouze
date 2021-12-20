@@ -35,7 +35,7 @@ def pierre_feuille_ciseaux(os):
 
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
 
     if joueur==ordi:
@@ -80,7 +80,7 @@ def lancer_de(os):
       return "win"
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     i = i + 1
   print("Vous avez perdu!!")

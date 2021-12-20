@@ -7,29 +7,29 @@ def inventory(player, os):
     if os == "mac":
         from menu_nav_mac import menu_nav_mac
         inv_choice = menu_nav_mac(player[1])
-    if os == "windows":
+    elif os == "windows":
         from Menu_nav import menu_nav
         inv_choice = menu_nav(player[1])
-    if inv_choice == "Potion":
-        player[0][2] = player[0][2] + 5
-        if player[0][2] > 10:
-            player[0][2] = 10
-            print("Vous récupérez toute votre vie")
-        else:
-            print("Vous récupérez 5 pvs")
-        player[1].remove("Gel Hydroalcoolique")
-        sleep(2)
-        if os == "mac":
-            system("clear")
-        if os == "windows":
-            system("cls")
-        return player, True
-    elif inv_choice == "Retour":
-        if os == "mac":
-            system("clear")
-        if os == "windows":
-            system("cls")
-        return player, False
+        if inv_choice == "Potion":
+            player[0][2] = player[0][2] + 5
+            if player[0][2] > 10:
+                player[0][2] = 10
+                print("Vous récupérez toute votre vie")
+            else:
+                print("Vous récupérez 5 pvs")
+            player[1].remove("Gel Hydroalcoolique")
+            sleep(2)
+            if os == "mac":
+                system("clear")
+            elif os == "windows":
+                system("cls")
+            return player, True
+        elif inv_choice == "Retour":
+            if os == "mac":
+                system("clear")
+            elif os == "windows":
+                system("cls")
+            return player, False
 
 
 
@@ -45,7 +45,7 @@ def monster_attack(player, monster, os):
     sleep(1)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     return player, monster
 
@@ -68,19 +68,19 @@ def vaccine(monster, os):
         sleep(1)
         if os == "mac":
             system("clear")
-        if os == "windows":
+        elif os == "windows":
             system("cls")
         return True
     else:
         if os == "mac":
             system("clear")
-        if os == "windows":
+        elif os == "windows":
             system("cls")
         print("Vous devez d'abord affaiblir le", monster[3], "avant de pouvoir le vacciner")
         sleep(2)
         if os == "mac":
             system("clear")
-        if os == "windows":
+        elif os == "windows":
             system("cls")
         return False
 
@@ -124,7 +124,7 @@ def battle(player, monster, os):
     sleep(1)
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     while (player[0][2] > 0 and monster[0] > 0):
         sleep(0.3)
@@ -132,24 +132,24 @@ def battle(player, monster, os):
         if os == "mac":
             from menu_nav_mac import menu_nav_mac
             choice = menu_nav_mac(list_fight())
-        if os == "windows":
+        elif os == "windows":
             from Menu_nav import menu_nav
             choice = menu_nav(list_fight())
         if os == "mac":
             system("clear")
-        if os == "windows":
+        elif os == "windows":
             system("cls")
         while choice == "inv":
             if os == "mac":
                 system("clear")
-            if os == "windows":
+            elif os == "windows":
                 system("cls")
             player, action = inventory(player, os)
             if action !=True:
                 if os == "mac":
                     system("clear")
                     choice = menu_nav_mac(list_fight())
-                if os == "windows":
+                elif os == "windows":
                     system("cls")
                     choice = menu_nav(list_fight())
             else:
@@ -169,7 +169,7 @@ def battle(player, monster, os):
                         if action !=True:
                             choice = menu_nav(list_fight())
                             system("clear")
-                if os == "windows":
+                elif os == "windows":
                     choice = menu_nav(list_fight())
                     while choice == "inv":
                         system("cls")

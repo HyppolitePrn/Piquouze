@@ -4,7 +4,7 @@ def map_print(Avion, Terminal, Hall, Parking,os, hall_loc, terminal_loc, avion_l
     space = " "
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print(("________")* 11)
     print("\n")

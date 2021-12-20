@@ -7,7 +7,7 @@ from Mac_or_wind import os
 def plot():
     if os == "mac":
         system("clear")
-    if os == "windows":
+    elif os == "windows":
         system("cls")
     print("An 20XX,")
     sleep(1)

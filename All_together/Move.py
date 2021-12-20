@@ -112,7 +112,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if os == "mac":
                 from menu_nav_mac import menu_nav_mac
                 choice = menu_nav_mac(menu_ig)
-            if os == "windows":
+            elif os == "windows":
                 from Menu_nav import menu_nav
                 choice = menu_nav(menu_ig)
             if choice == "stats":
@@ -163,7 +163,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -203,7 +203,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -240,7 +240,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -279,7 +279,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -319,7 +319,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -355,7 +355,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -392,7 +392,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -432,7 +432,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -469,7 +469,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
                     choice = menu_nav_mac(menu_ig)
-                if os == "windows":
+                elif os == "windows":
                     from Menu_nav import menu_nav
                     choice = menu_nav(menu_ig)
                 if choice == "stats":
@@ -556,7 +556,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 while shop_choice != "Retour":
                     sell_fonction = menu_nav_mac(list_sell)
                     shop_choice = duty_free(player, sell_fonction, list_sell, os)
-            if os == "windows":
+            elif os == "windows":
                 from Menu_nav import menu_nav
                 while shop_choice != "Retour":
                     sell_fonction = menu_nav(list_sell)
