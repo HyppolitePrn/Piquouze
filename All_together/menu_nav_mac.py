@@ -6,9 +6,12 @@ from about import info
 
 def menu_nav_mac(menu):
     print("\n")
-    printed_menu = "\n".join(menu)
-    print(printed_menu)
-    i = 0
+    i = 1
+    for k in range (0,len(menu)):
+        if i == k:
+            print(f"\033[1m-->  {menu[k]}\033[0m")
+        else: 
+            print(f"    {menu[k]}")
     moove = ''
     while moove != "\r":
         moove = getch_mac()
