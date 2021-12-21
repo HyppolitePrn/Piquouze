@@ -17,6 +17,7 @@ def menu_nav_mac(menu):
         moove = getch_mac()
         if moove == "s" and i < len(menu) - 1:
             system("clear")
+            print("\n")
             i = i + 1
             for j in range(0, len(menu)):
                 if i == j:
@@ -25,6 +26,7 @@ def menu_nav_mac(menu):
                     print(f"    {menu[j]}")
         elif moove == "z" and i > 1:
             system("clear")
+            print("\n")
             i = i - 1
             for j in range(0,len(menu)):
                 if i == j:
