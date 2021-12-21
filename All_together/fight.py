@@ -11,26 +11,26 @@ def inventory(player, os):
     elif os == "windows":
         from Menu_nav import menu_nav
         inv_choice = menu_nav(player[1])
-        if inv_choice == "Potion":
-            player[0][2] = player[0][2] + 5
-            if player[0][2] > 10:
-                player[0][2] = 10
-                print("Vous récupérez toute votre vie")
-            else:
-                print("Vous récupérez 5 pvs")
-            player[1].remove("Gel Hydroalcoolique")
-            sleep(2)
-            if os == "mac":
-                system("clear")
-            elif os == "windows":
-                system("cls")
-            return player, True
-        elif inv_choice == "Retour":
-            if os == "mac":
-                system("clear")
-            elif os == "windows":
-                system("cls")
-            return player, False
+    if inv_choice == "Potion":
+        player[0][2] = player[0][2] + 5
+        if player[0][2] > 10:
+            player[0][2] = 10
+            print("Vous récupérez toute votre vie")
+        else:
+            print("Vous récupérez 5 pvs")
+        player[1].remove("Gel Hydroalcoolique")
+        sleep(2)
+        if os == "mac":
+            system("clear")
+        elif os == "windows":
+            system("cls")
+        return player, True
+    elif inv_choice == "Retour":
+        if os == "mac":
+            system("clear")
+        elif os == "windows":
+            system("cls")
+        return player, False
 
 
 

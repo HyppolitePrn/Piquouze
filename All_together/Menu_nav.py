@@ -63,5 +63,7 @@ def menu_nav(menu):
         return "equipment"
     elif menu[i] == "Argent":
         return "argent"
+    elif menu[i] == "Quitter le jeux":
+        return "stop"
     else:
         menu_nav(menu)
