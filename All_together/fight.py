@@ -2,6 +2,7 @@ from os import system
 from time import sleep
 from levels import lvl_up
 from liste import list_fight
+from liste import player
 
 def inventory(player, os):
     if os == "mac":
@@ -117,24 +118,33 @@ def lvl_up(player):
         sleep(1)
     return player
 
+def sanity(player):
+    if player[0][8] >= 2 and player[0][8] < 4:
+        print("Vous sentez quelque chose...")
+    elif player[0][8] >= 4 and player[0][8] < 5:
+        print("Quelque chose ne va pas...")
+    elif player[0][8] >= 5:
+        print("Que la chasse commence !")
 
 def battle(player, monster, os):
     vax = False
     print("Vous engagez le combat contre", monster[3])
     sleep(1)
+    sanity(player)
+    sleep(2)
     if os == "mac":
         system("clear")
     elif os == "windows":
         system("cls")
     while (player[0][2] > 0 and monster[0] > 0):
         sleep(0.3)
-        print(f"{monster[3]} HPs=", monster[0], "Player HPs=", player[0][2])
+        print(f"PVs du ", monster[3], ":", monster[0], "\nVos PVs :", player[0][2])
         if os == "mac":
             from menu_nav_mac import menu_nav_mac
-            choice = menu_nav_mac(list_fight())
+            choice = menu_nav_mac(list_fight(player))
         elif os == "windows":
             from Menu_nav import menu_nav
-            choice = menu_nav(list_fight())
+            choice = menu_nav(list_fight(player))
         if os == "mac":
             system("clear")
         elif os == "windows":
@@ -148,10 +158,10 @@ def battle(player, monster, os):
             if action !=True:
                 if os == "mac":
                     system("clear")
-                    choice = menu_nav_mac(list_fight())
+                    choice = menu_nav_mac(list_fight(player))
                 elif os == "windows":
                     system("cls")
-                    choice = menu_nav(list_fight())
+                    choice = menu_nav(list_fight(player))
             else:
                 break
         while choice == "vax":
@@ -162,20 +172,20 @@ def battle(player, monster, os):
                 return player
             else:
                 if os == "mac":
-                    choice = menu_nav_mac(list_fight())
+                    choice = menu_nav_mac(list_fight(player))
                     while choice == "inv":
                         system("clear")
                         player, action = inventory(player, os)
                         if action !=True:
-                            choice = menu_nav(list_fight())
+                            choice = menu_nav(list_fight(player))
                             system("clear")
                 elif os == "windows":
-                    choice = menu_nav(list_fight())
+                    choice = menu_nav(list_fight(player))
                     while choice == "inv":
                         system("cls")
                         player, action = inventory(player, os)
                         if action !=True:
-                            choice = menu_nav(list_fight())
+                            choice = menu_nav(list_fight(player))
                             system("cls")
         if choice == "atk":
             player, monster = player_atk(player, monster, os)

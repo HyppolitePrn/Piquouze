@@ -10,10 +10,6 @@ def start():
         ]
     return menu
 
-def list_fight():
-    liste_fight =["Que voulez-vous faire ?","attaquer","inventaire","vacciner"]
-    return liste_fight
-
 list_sell = [
     "Articles:",
     "Gel Hydroalcoolique +5 hp (soin) : 10 ",
@@ -35,3 +31,10 @@ player = [["Stats:", "Pv:", 10, "Attaque:", 3, "Défense:", 0, "Lvl:", 1, "XP:",
     ["Inventaire:", "Gel Hydroalcoolique", "Retour"],
     ["Equipement:"],
     ["Argent:", 0]]
+
+def list_fight(player):
+    if player[0][8] >= 5:
+        liste_fight =["Que voulez-vous faire ?","Attaquer","Inventaire"]
+    else:
+        liste_fight =["Que voulez-vous faire ?","Attaquer","Inventaire","Vacciner"]
+    return liste_fight

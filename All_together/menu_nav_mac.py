@@ -2,7 +2,7 @@ from os import system
 from scenario import plot, press_enter_mac
 from getch_on_mac import *
 from liste import start
-
+from about import info
 
 def menu_nav_mac(menu):
     print("\n")
@@ -33,14 +33,14 @@ def menu_nav_mac(menu):
         plot()
         press_enter_mac()
     elif menu[i] == "Info sur le jeu":
-        print("bn")
+        info()
     elif menu[i] == "Quitter":
         return
-    elif menu[i] == "attaquer":
+    elif menu[i] == "Attaquer":
         return "atk"
-    elif menu[i] == "inventaire":
+    elif menu[i] == "Inventaire":
         return "inv"
-    elif menu[i] == "vacciner":
+    elif menu[i] == "Vacciner":
         return "vax"
     elif menu[i] == "Gel Hydroalcoolique":
         return "Potion"
