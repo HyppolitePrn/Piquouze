@@ -1,10 +1,13 @@
 from os import system
+from time import sleep
+
 def duty_free(player, choice, sell, os):
     if choice == "Potion":
         if player[3][1] < 10:
             print("Tu n'as pas assez d'argent")
-        if player[3][1] >= 10:
-            player[1].insert(len(player) - 2, "Gel Hydroalcoolique")
+            sleep(2)
+        elif player[3][1] >= 10:
+            player[1].insert(len(player[1]) - 1, "Gel Hydroalcoolique")
             player[3][1] = player[3][1] - 10
     elif choice ==  "Masque chirurgical":
         if player[3][1] < 100:

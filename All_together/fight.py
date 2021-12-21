@@ -193,6 +193,7 @@ def battle(player, monster, os):
                 lvl_up(player)
                 player[3][1] += 10
                 print("Vous récupérez 10 d'argent")
+                sleep(2)
                 break
         if vax != True:
             player, monster = monster_attack(player, monster, os)
@@ -200,5 +201,6 @@ def battle(player, monster, os):
             lvl_up(player)
             player[3][1] += 10
             print("Vous récupérez 10 d'argent")
+            sleep(2)
             break
     return player
