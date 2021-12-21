@@ -589,24 +589,33 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 citoyen_print(os)
                 jeux = pierre_feuille_ciseaux(os)
                 if jeux == "win":
+                    victoir_mini_jeux_print(os)
                     player[3][1] += 100
                     citoyen1 = "0"
+                elif jeux == "loose":
+                    defaite_mini_jeux_print(os)
         # je défini la zone de citoyen
         if Avion[3][2] == user:
             if citoyen2 == "1":
                 citoyen_print(os)
                 jeux = lancer_de(os)
                 if jeux == "win":
+                    victoir_mini_jeux_print(os)
                     player[3][1] += 100
                     citoyen2 = "0"
+                elif jeux == "loose":
+                    defaite_mini_jeux_print(os)
         # je défini la zone de citoyen
         if Terminal[1][2] == user:
             if citoyen3 == "1":
                 citoyen_print(os)
                 jeux = just_prix()
                 if jeux == "win":
+                    victoir_mini_jeux_print(os)
                     player[3][1] += 100
                     citoyen3 = "0"
+                elif jeux == "loose":
+                    defaite_mini_jeux_print(os)
         # je rallume l'interupteur pour afficher le duty free
         if Hall[2][0] != user:
             duty_map = "1"

@@ -215,3 +215,46 @@ def argent_print(player, os):
             next = getch()
     return
 
+
+def victoir_mini_jeux_print(os):
+    next = "["
+    while next == "[":
+        if os == "mac":
+            from getch_on_mac import getch_mac
+            system("clear")
+            print(("________")* 11)
+            print("\n")
+            print("   ", "Vous avez gagné, vous remporter 100 d'argent")
+            print("    appuyez sur une touche pour continuer")
+            next = getch_mac()
+        elif os == "windows":
+            from msvcrt import getch
+            system("cls")
+            print(("________")* 11)
+            print("\n")
+            print("   ", "Vous avez gagné, vous remporter 100 d'argent")
+            print("    appuyez sur une touche pour continuer")
+            next = getch()
+    return
+
+def defaite_mini_jeux_print(os):
+    next = "["
+    while next == "[":
+        if os == "mac":
+            from getch_on_mac import getch_mac
+            system("clear")
+            print(("________")* 11)
+            print("\n")
+            print("   ", "Vous avez perdu, revenez pour retenter votre chance")
+            print("    appuyez sur une touche pour continuer")
+            next = getch_mac()
+        elif os == "windows":
+            from msvcrt import getch
+            system("cls")
+            print(("________")* 11)
+            print("\n")
+            print("   ", "Vous avez perdu, revenez pour retenter votre chance")
+            print("    appuyez sur une touche pour continuer")
+            next = getch()
+    return
+
