@@ -109,22 +109,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
         if direction.lower() == "stop":
                 stop = "stop"
         if direction.lower() == "menu":
+            choice = " "
             if os == "mac":
                 from menu_nav_mac import menu_nav_mac
-                choice = menu_nav_mac(menu_ig)
+                while choice != "Retour" and choice != "stop":
+                    system("clear")
+                    choice = menu_nav_mac(menu_ig)
+                    if choice == "stats":
+                        stat_print(player, os)
+                    if choice == "equipment":
+                        equipement_print(player, os)
+                    if choice == "argent":
+                        argent_print(player, os)
+                    if choice == "inv":
+                        inventory(player, os)
+                    if choice == "stop":
+                        stop = "stop"
             elif os == "windows":
                 from Menu_nav import menu_nav
-                choice = menu_nav(menu_ig)
-            if choice == "stats":
-                    stat_print(player, os)
-            if choice == "equipment":
-                equipement_print(player, os)
-            if choice == "argent":
-                argent_print(player, os)
-            if choice == "inv":
-                inventory(player, os)
-            if choice == "stop":
-                stop = "stop"
+                while choice != "Retour" and choice != "stop":
+                    system("csl")
+                    choice = menu_nav(menu_ig)
+                    if choice == "stats":
+                        stat_print(player, os)
+                    if choice == "equipment":
+                        equipement_print(player, os)
+                    if choice == "argent":
+                        argent_print(player, os)
+                    if choice == "inv":
+                        inventory(player, os)
+                    if choice == "stop":
+                        stop = "stop"
                 
 
         if localisation == Parking:
@@ -162,22 +177,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "z":
                 Parking[0][0] = shape
                 localisation = Hall
@@ -204,22 +234,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "s":
                 Hall[2][3] = shape
                 localisation = Parking
@@ -243,22 +288,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "z":
                 Hall[0][2] = shape
                 localisation = Terminal
@@ -284,22 +344,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "z":
                 Hall[0][3] = shape
                 localisation = Terminal
@@ -326,22 +401,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "s":
                 Terminal[3][0] = shape
                 localisation = Hall
@@ -364,22 +454,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "s":
                 Terminal[3][1] = shape
                 localisation = Hall
@@ -403,22 +508,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "z":
                 Terminal[0][0] = shape
                 localisation = Avion
@@ -445,22 +565,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "s":
                 Avion[4][3] = shape
                 localisation = Terminal
@@ -484,22 +619,37 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             if direction.lower() == "stop":
                 stop = "stop"
             if direction.lower() == "menu":
+                choice = " "
                 if os == "mac":
                     from menu_nav_mac import menu_nav_mac
-                    choice = menu_nav_mac(menu_ig)
+                    while choice != "Retour" and choice != "stop":
+                        system("clear")
+                        choice = menu_nav_mac(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
                 elif os == "windows":
                     from Menu_nav import menu_nav
-                    choice = menu_nav(menu_ig)
-                if choice == "stats":
-                        stat_print(player, os)
-                if choice == "equipment":
-                    equipement_print(player, os)
-                if choice == "argent":
-                    argent_print(player, os)
-                if choice == "inv":
-                    inventory(player, os)
-                if choice == "stop":
-                    stop = "stop"
+                    while choice != "Retour" and choice != "stop":
+                        system("csl")
+                        choice = menu_nav(menu_ig)
+                        if choice == "stats":
+                            stat_print(player, os)
+                        if choice == "equipment":
+                            equipement_print(player, os)
+                        if choice == "argent":
+                            argent_print(player, os)
+                        if choice == "inv":
+                            inventory(player, os)
+                        if choice == "stop":
+                            stop = "stop"
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")
                 while beat_the_boss.lower() != "o" and beat_the_boss != "n":
