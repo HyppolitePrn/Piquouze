@@ -69,6 +69,53 @@ def move(direction, position):
 
     return position
 
+def action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map):
+    stop = " "
+    map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+    print("   Tapez 'menu' pour accéder aux contenues associé.")
+    print("   Pour vous déplacer")
+    direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+    while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
+            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+            print("   Tapez 'menu' pour accéder aux contenues associé.")
+            print("   Pour vous déplacer")
+            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
+    if direction.lower() == "stop":
+            stop = "stop"
+    if direction.lower() == "menu":
+        choice = " "
+        if os == "mac":
+            from menu_nav_mac import menu_nav_mac
+            while choice != "Retour" and choice != "stop":
+                system("clear")
+                choice = menu_nav_mac(menu_ig)
+                if choice == "stats":
+                    stat_print(player, os)
+                if choice == "equipment":
+                    equipement_print(player, os)
+                if choice == "argent":
+                    argent_print(player, os)
+                if choice == "inv":
+                    inventory(player, os)
+                if choice == "stop":
+                    stop = "stop"
+        elif os == "windows":
+            from Menu_nav import menu_nav
+            while choice != "Retour" and choice != "stop":
+                system("csl")
+                choice = menu_nav(menu_ig)
+                if choice == "stats":
+                    stat_print(player, os)
+                if choice == "equipment":
+                    equipement_print(player, os)
+                if choice == "argent":
+                    argent_print(player, os)
+                if choice == "inv":
+                    inventory(player, os)
+                if choice == "stop":
+                    stop = "stop"
+    return direction.lower(), stop
+
 
 def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation):
     stop = " "
@@ -97,51 +144,9 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
     while stop == " ":
         xavitna = [5, 6, 0, "Xavitna"]
         seukitpes = [8, 3, 0, "Seukitpes"]
-        map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-        print("   Tapez 'menu' pour accéder aux contenues associé.")
-        print("   Pour vous déplacer")
-        direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-        while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-        if direction.lower() == "stop":
-                stop = "stop"
-        if direction.lower() == "menu":
-            choice = " "
-            if os == "mac":
-                from menu_nav_mac import menu_nav_mac
-                while choice != "Retour" and choice != "stop":
-                    system("clear")
-                    choice = menu_nav_mac(menu_ig)
-                    if choice == "stats":
-                        stat_print(player, os)
-                    if choice == "equipment":
-                        equipement_print(player, os)
-                    if choice == "argent":
-                        argent_print(player, os)
-                    if choice == "inv":
-                        inventory(player, os)
-                    if choice == "stop":
-                        stop = "stop"
-            elif os == "windows":
-                from Menu_nav import menu_nav
-                while choice != "Retour" and choice != "stop":
-                    system("csl")
-                    choice = menu_nav(menu_ig)
-                    if choice == "stats":
-                        stat_print(player, os)
-                    if choice == "equipment":
-                        equipement_print(player, os)
-                    if choice == "argent":
-                        argent_print(player, os)
-                    if choice == "inv":
-                        inventory(player, os)
-                    if choice == "stop":
-                        stop = "stop"
-                
 
+        direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
+                
         if localisation == Parking:
             Parking = move(direction, Parking)
         if localisation == Hall:
@@ -165,56 +170,13 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
             duty_map = "1"
         # Je défini les portes de Parking vers Hall:
         if Parking[0][0] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "z":
                 Parking[0][0] = shape
                 localisation = Hall
                 if hall_loc == "0":
                     hall_print(os)
                 hall_loc = "1"
-                position = Hall[2][3]
                 Hall[2][3] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -222,53 +184,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         # Je défini les portes de hall vers parking:
         if Hall[2][3] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "s":
                 Hall[2][3] = shape
                 localisation = Parking
-                position = Parking[0][0]
                 Parking[0][0] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -276,112 +195,26 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         # Je défini les portes de Hall vers Terminal:
         if Hall[0][2] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "z":
                 Hall[0][2] = shape
                 localisation = Terminal
                 if terminal_loc == "0":
                     terminal_print(os)
                 terminal_loc = "1"
-                position = Terminal[3][0]
                 Terminal[3][0] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
                 Hall = move(direction, Hall)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         if Hall[0][3] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "z":
                 Hall[0][3] = shape
                 localisation = Terminal
                 if terminal_loc == "0":
                     terminal_print(os)
                 terminal_loc = "1"
-                position = Terminal[3][1]
                 Terminal[3][1] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -389,106 +222,20 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         # Je défini les portes de Terminal vers Hall:
         if Terminal[3][0] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "s":
                 Terminal[3][0] = shape
                 localisation = Hall
-                position = Hall[0][2]
                 Hall[0][2] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
                 Terminal = move(direction, Terminal)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         if Terminal[3][1] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "s":
                 Terminal[3][1] = shape
                 localisation = Hall
-                position = Hall[0][3]
                 Hall[0][3] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -496,56 +243,13 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         # Je défini les portes de Terminal vers Avion:
         if Terminal[0][0] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "z":
                 Terminal[0][0] = shape
                 localisation = Avion
                 if avion_loc == "0":
                     avion_print(os)
                 avion_loc = "1"
-                position = Avion[4][3]
                 Avion[4][3] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -553,53 +257,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         # Je défini les portes de Avion vers Terminal:
         if Avion[4][3] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "s":
                 Avion[4][3] = shape
                 localisation = Terminal
-                position = Terminal[0][0]
                 Terminal[0][0] = user
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             else:
@@ -607,49 +268,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking,localisation)
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         #Je défini les portes de Avion vers le mage:
         if Avion[0][0] == user:
-            map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
-            print("   Pour vous déplacer")
-            direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
-                map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-                print("   Tapez 'menu' pour accéder aux contenues associé.")
-                print("   Pour vous déplacer")
-                direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
-            if direction.lower() == "stop":
-                stop = "stop"
-            if direction.lower() == "menu":
-                choice = " "
-                if os == "mac":
-                    from menu_nav_mac import menu_nav_mac
-                    while choice != "Retour" and choice != "stop":
-                        system("clear")
-                        choice = menu_nav_mac(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
-                elif os == "windows":
-                    from Menu_nav import menu_nav
-                    while choice != "Retour" and choice != "stop":
-                        system("csl")
-                        choice = menu_nav(menu_ig)
-                        if choice == "stats":
-                            stat_print(player, os)
-                        if choice == "equipment":
-                            equipement_print(player, os)
-                        if choice == "argent":
-                            argent_print(player, os)
-                        if choice == "inv":
-                            inventory(player, os)
-                        if choice == "stop":
-                            stop = "stop"
+            direction, stop = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")
                 while beat_the_boss.lower() != "o" and beat_the_boss != "n":
