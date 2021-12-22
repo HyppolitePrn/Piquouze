@@ -104,7 +104,7 @@ def action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc
         elif os == "windows":
             from Menu_nav import menu_nav
             while choice != "Retour" and choice != "stop":
-                system("csl")
+                system("cls")
                 choice = menu_nav(menu_ig)
                 if choice == "stats":
                     stat_print(player, os)
