@@ -274,6 +274,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de Parking vers Hall:
         if Parking[0][0] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "z":
                 Parking[0][0] = shape
                 localisation = Hall
@@ -288,6 +312,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de hall vers parking:
         if Hall[2][3] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "s":
                 Hall[2][3] = shape
                 localisation = Parking
@@ -299,6 +347,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de Hall vers Terminal:
         if Hall[0][2] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "z":
                 Hall[0][2] = shape
                 localisation = Terminal
@@ -312,6 +384,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         if Hall[0][3] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "z":
                 Hall[0][3] = shape
                 localisation = Terminal
@@ -326,6 +422,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de Terminal vers Hall:
         if Terminal[3][0] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "s":
                 Terminal[3][0] = shape
                 localisation = Hall
@@ -336,6 +456,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
         if Terminal[3][1] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "s":
                 Terminal[3][1] = shape
                 localisation = Hall
@@ -347,6 +491,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de Terminal vers Avion:
         if Terminal[0][0] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "z":
                 Terminal[0][0] = shape
                 localisation = Avion
@@ -361,6 +529,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         # Je défini les portes de Avion vers Terminal:
         if Avion[4][3] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "s":
                 Avion[4][3] = shape
                 localisation = Terminal
@@ -372,6 +564,30 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         #Je défini les portes de Avion vers le mage:
         if Avion[0][0] == user:
             direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
+            if save == "save":
+            save_variable = open("save.pickle","wb")
+            dump(localisation, save_variable)
+            dump(player, save_variable)
+            dump(Parking, save_variable)
+            dump(Avion, save_variable)
+            dump(Hall, save_variable)
+            dump(Terminal, save_variable)
+            dump(duty_map, save_variable)
+            dump(duty, save_variable)
+            dump(citoyen3, save_variable)
+            dump(citoyen2, save_variable)
+            dump(citoyen1, save_variable)
+            dump(antivax1, save_variable)
+            dump(antivax2, save_variable)
+            dump(antivax3, save_variable)
+            dump(antivax4, save_variable)
+            dump(antivax5, save_variable)
+            dump(antivax6, save_variable)
+            dump(antivax7, save_variable)
+            dump(avion_loc, save_variable)
+            dump(hall_loc, save_variable)
+            dump(terminal_loc, save_variable)
+            save_variable.close()
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")
                 while beat_the_boss.lower() != "o" and beat_the_boss != "n":
