@@ -8,12 +8,12 @@ def pierre_feuille_ciseaux(os):
   while True:
     print("vous avez ", victoire_player,"points et l'ordinateur à ", victoire_ordi,"points")
     joueur=input("entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
+    while joueur!="p" and joueur!="f" and joueur!="c" and joueur!="q":
+      joueur=input("entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
     if joueur=="q":
       print("vous avez quittez le jeu ")
       print("fin du programme")
       return
-    elif joueur!="p" and joueur!="f" and joueur!="c":
-      continue
 
     if joueur=="p":
       print("PIERRE contre...", end=" ")
