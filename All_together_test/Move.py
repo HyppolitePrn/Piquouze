@@ -4,7 +4,6 @@ from fight import battle
 from fight import inventory
 from Mac_or_wind import os
 from duty_free import duty_free
-from liste import list_sell
 from liste import menu_ig
 from mini_jeux import *
 from pickle import *
@@ -192,6 +191,14 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         ["Inventaire:", "Gel Hydroalcoolique", "Retour"],
         ["Equipement:"],
         ["Argent:", 0]]
+        list_sell = [
+        "Articles:",
+        "Gel Hydroalcoolique +5 hp (soin) : 10 ",
+        "Masque chirurgical + 1 défense : 100",
+        "Blouse de bataille + 3 défense : 100",
+        "Seringue en adamantium +3 attaque : 100",
+        "Retour"
+]
     elif start_var == "load":
         loading = open("save.pickle","rb")
         localisation = load(loading)
@@ -215,6 +222,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         avion_loc = load(loading)
         hall_loc = load(loading)
         terminal_loc = load(loading)
+        list_sell = load(loading)
         loading.close()
 
     
@@ -247,6 +255,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
             dump(avion_loc, save_variable)
             dump(hall_loc, save_variable)
             dump(terminal_loc, save_variable)
+            dump(list_sell, save_variable)
             save_variable.close()
 
         localisation = verif_position(Avion, Terminal, Hall, Parking)
@@ -297,6 +306,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "z":
                 Parking[0][0] = shape
@@ -335,6 +345,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "s":
                 Hall[2][3] = shape
@@ -370,6 +381,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "z":
                 Hall[0][2] = shape
@@ -407,6 +419,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "z":
                 Hall[0][3] = shape
@@ -445,6 +458,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "s":
                 Terminal[3][0] = shape
@@ -479,6 +493,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "s":
                 Terminal[3][1] = shape
@@ -514,6 +529,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "z":
                 Terminal[0][0] = shape
@@ -552,6 +568,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "s":
                 Avion[4][3] = shape
@@ -587,6 +604,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 dump(avion_loc, save_variable)
                 dump(hall_loc, save_variable)
                 dump(terminal_loc, save_variable)
+                dump(list_sell, save_variable)
                 save_variable.close()
             if direction.lower() == "z":
                 beat_the_boss = input("   Voulez-vous affronter le boss? o/n : ")

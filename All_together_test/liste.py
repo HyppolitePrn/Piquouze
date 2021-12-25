@@ -11,14 +11,6 @@ def start():
         ]
     return menu
 
-list_sell = [
-    "Articles:",
-    "Gel Hydroalcoolique +5 hp (soin) : 10 ",
-    "Masque chirurgical + 1 défense : 100",
-    "Blouse de bataille + 3 défense : 100",
-    "Seringue en adamantium +3 attaque : 100",
-    "Retour"
-]
 
 menu_ig = ["Menu:",
     "Stats",
