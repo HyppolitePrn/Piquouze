@@ -12,7 +12,7 @@ def plot():
         system("cls")
     print("An 20XX,")
     sleep(1)
-    print("Le Divoc 19 s'est propagé dans le monde, réveillant les pulsions les plus sombres de chaque individu")
+    print("Le Divoc 91 s'est propagé dans le monde, réveillant les pulsions les plus sombres de chaque individu")
     sleep(2)
     print("Tous? Non! Un petit laboratoire a réussi à résister à l'épidémie.")
     sleep(2)
