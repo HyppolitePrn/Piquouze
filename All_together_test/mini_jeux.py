@@ -65,16 +65,15 @@ def pierre_feuille_ciseaux(os):
 
 
 def lancer_de(os):
-  print("lancez le dé et essayer de trouver la valeur cachée. Vous avez trois essais")
   i = 1
   find_me = randint(1, 6)
   while i < 4:
+    print("lancez le dé et essayer de trouver la valeur cachée. Vous avez trois essais")
     print("manche", i)
     lance = input("pour lancer votre dé tapez espace: ")
     while lance != " ":
       lance = input("pour lancer votre dé tapez espace: ")
     values = randint(1, 6)
-    print(values)
     if values == find_me:
       print("Vous avez trouvé le bon chiffre!!")
       return "win"
@@ -82,6 +81,7 @@ def lancer_de(os):
         system("clear")
     elif os == "windows":
         system("cls")
+    print("La valeur de votre dé est: ", values)
     i = i + 1
   print("Vous avez perdu!!")
   return "loose"

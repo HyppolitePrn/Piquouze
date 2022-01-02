@@ -17,8 +17,8 @@ menu_ig = ["Menu:",
     "Inventaire",
     "Equipement",
     "Argent",
-    "Quitter le jeux",
     "Sauvegarder",
+    "Quitter le jeux",
     "Retour"
 ]
 

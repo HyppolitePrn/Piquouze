@@ -225,7 +225,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         ["Equipement:"],
         ["Argent:", 0]]
         list_sell = [
-        player[3],
+        "Articles: ",
         "Gel Hydroalcoolique +5 hp (soin) : 10 ",
         "Masque chirurgical + 1 défense : 100",
         "Blouse de bataille + 3 défense : 100",
@@ -487,11 +487,13 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
             if os == "mac":
                 from menu_nav_mac import menu_nav_mac
                 while shop_choice != "Retour":
+                    print(player[3])
                     sell_fonction = menu_nav_mac(list_sell)
                     shop_choice = duty_free(player, sell_fonction, list_sell, os)
             elif os == "windows":
                 from Menu_nav import menu_nav
                 while shop_choice != "Retour":
+                    print(player[3])
                     sell_fonction = menu_nav(list_sell)
                     shop_choice = duty_free(player, sell_fonction, list_sell, os)
             duty_map = "0"
