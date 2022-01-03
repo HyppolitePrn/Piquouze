@@ -1,18 +1,18 @@
 from random import randint
 from os import system
 def pierre_feuille_ciseaux(os):
-  print("debut du programme")
+  print("Débbut du programme")
   victoire_ordi=0
   nul=0
   victoire_player=0
   while True:
-    print("vous avez ", victoire_player,"points et l'ordinateur à ", victoire_ordi,"points")
-    joueur=input("entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
+    print("Vous avez ", victoire_player,"points et l'ordinateur a ", victoire_ordi,"points")
+    joueur=input("Entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
     while joueur!="p" and joueur!="f" and joueur!="c" and joueur!="q":
-      joueur=input("entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
+      joueur=input("Entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
     if joueur=="q":
-      print("vous avez quittez le jeu ")
-      print("fin du programme")
+      print("Vous avez quitté le jeu ")
+      print("Fin du programme")
       return
 
     if joueur=="p":
@@ -39,24 +39,24 @@ def pierre_feuille_ciseaux(os):
         system("cls")
 
     if joueur==ordi:
-      print("parite nulle!")
+      print("Partie nulle!")
     elif joueur=="p" and ordi=="c":
-      print("vous avez gagné ?")
+      print("Vous avez gagné ?")
       victoire_player=  victoire_player+1  
     elif joueur=="f" and ordi=="p":
-      print("vous avez gagné ?")
+      print("Vous avez gagné ?")
       victoire_player=  victoire_player+1
     elif joueur=="c" and ordi=="f":
-      print("vous avez gagné ?")
+      print("Vous avez gagné ?")
       victoire_player=  victoire_player+1 
     elif joueur=="p" and ordi=="f":
-      print("vous avez perdu ?")
+      print("Vous avez perdu ?")
       victoire_ordi=victoire_ordi+1 
     elif joueur=="f" and ordi=="c":
-      print("vous avez perdu ?")
+      print("Vous avez perdu ?")
       victoire_ordi=victoire_ordi+1
     elif joueur=="c" and ordi=="p":
-      print("vous avez perdu ?")
+      print("Vous avez perdu ?")
       victoire_ordi=victoire_ordi+1
     if victoire_player==3:
       return "win"
@@ -68,11 +68,11 @@ def lancer_de(os):
   i = 1
   find_me = randint(1, 6)
   while i < 4:
-    print("lancez le dé et essayer de trouver la valeur cachée. Vous avez trois essais")
-    print("manche", i)
-    lance = input("pour lancer votre dé tapez espace: ")
+    print("Lancez le dé et essayez de trouver la valeur cachée. Vous avez trois essais")
+    print("Manche", i)
+    lance = input("Pour lancer votre dé faites espace puis entrée: ")
     while lance != " ":
-      lance = input("pour lancer votre dé tapez espace: ")
+      lance = input("Pour lancer votre dé faites espace puis entrée: ")
     values = randint(1, 6)
     if values == find_me:
       print("Vous avez trouvé le bon chiffre!!")
@@ -91,11 +91,11 @@ def just_prix():
   values=randint(1,500) 
   i=0
   while i<10:
-    number_1=int(input("devinez un nombre entre 1 et 500, vous avez 10 essais : "))
+    number_1=int(input("Devinez un nombre entre 1 et 500, vous avez 10 essais : "))
     if number_1>values:
-      print(" trop grand")
+      print("Trop grand")
     elif number_1<values:
-      print("trop petit")
+      print("Trop petit")
     if number_1!=values:
       i= i+1
     if number_1==values:

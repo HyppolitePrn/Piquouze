@@ -3,7 +3,7 @@ from os import system
 
 def start():
     menu = [
-        "Main menu:",
+        "Menu Principal:",
         "Nouvelle partie",
         "Info sur le jeu",
         "Charger une partie",
@@ -18,7 +18,7 @@ menu_ig = ["Menu:",
     "Equipement",
     "Argent",
     "Sauvegarder",
-    "Quitter le jeux",
+    "Quitter le jeu",
     "Retour"
 ]
 
