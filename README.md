@@ -12,7 +12,19 @@ ______________________________________
 Pour lancer le jeu :
 
 Sur windows :
-    py All_together/start_the_game.py
+    py game/start_the_game.py
 
 Sur MacOS : 
-    python3 All_together/start_the_game.py
+    python3 game/start_the_game.py
+
+
+Attention, la carte n'est pas entièrement découverte dès le début, à vous de découvrir ce qu'elle cache !
+______________________________________
+
+Déplacements dans le menu :
+
+Sur windows :
+   Flèches haut et bas
+
+Sur mac :
+   Z et S
