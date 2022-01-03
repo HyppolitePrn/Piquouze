@@ -200,9 +200,9 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
     stop = " "
     user = "[Ï]"
     shape = "[ ]"
-    xavitna = [5, 6, 0, "Xavitna"]
+    xavitna = [5, 4, 0, "Xavitna"]
     seukitpes = [8, 3, 0, "Seukitpes"]
-    boss = [50, 30, 0, "Boss"]
+    boss = [50, 6, 0, "Boss"]
     if start_var == "new":
         localisation = Parking
         hall_loc = "0"
@@ -262,7 +262,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
 
     while stop == " ":
         save = " "
-        xavitna = [5, 6, 0, "Xavitna"]
+        xavitna = [5, 4, 0, "Xavitna"]
         seukitpes = [8, 3, 0, "Seukitpes"]
         direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
         if save == "save":
