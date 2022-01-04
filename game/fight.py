@@ -36,7 +36,7 @@ def inventory(player, os):
 def monster_attack(player, monster, os):
     print(f"Le {monster[3]} attaque !")
     sleep(1)
-    monsterDamage = monster[1] - player[0][10]
+    monsterDamage = monster[1] - player[0][8]
     if monsterDamage > 0:
         player[0][2] = player[0][2] - monsterDamage
         print("Il vous inflige", monsterDamage, "dégats")
@@ -100,12 +100,12 @@ def player_atk(player, monster, os):
 
 
 def lvl_up(player):
-    if player[0][12] == 10:
+    if player[0][12] >= 10:
         player[0][10] += 1
         player[0][2] += 3
         player[0][4] += 3
         player[0][6] += 1
-        player[0][12] = 0
+        player[0][12] = player[0][12] - 10
         print("Lvl up!")
         sleep(1)
         print("Vous gagnez +3 Pvs, +1 Attaque")
