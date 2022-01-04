@@ -64,6 +64,7 @@ def vaccine(monster, os):
     if monster[0] <= 3:
         print("Vous avez sauvé le", monster[3])
         sleep(1)
+        player[0][12] += 2
         print("Vous avez gagné 2 points d'expérience !")
         sleep(1)
         if os == "mac":
