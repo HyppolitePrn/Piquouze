@@ -71,7 +71,7 @@ def action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc
     stop = " "
     save = " "
     map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-    print("   Tapez 'menu' pour accéder aux contenues associé.")
+    print("   Tapez 'menu' pour accéder aux contenus associés.")
     print("   Pour vous déplacer")
     direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
     while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
