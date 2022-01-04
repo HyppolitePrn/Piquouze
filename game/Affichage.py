@@ -181,7 +181,8 @@ def equipement_print(player, os):
             system("clear")
             print(("________")* 11)
             print("\n")
-            print("   ", *player[2])
+            for value in player[2]:
+                print("   ", value)
             print("    appuyez sur une touche pour continuer")
             next = getch_mac()
         elif os == "windows":
@@ -189,7 +190,8 @@ def equipement_print(player, os):
             system("cls")
             print(("________")* 11)
             print("\n")
-            print("   ", *player[2])
+            for value in player[2]:
+                print("   ", value)
             print("    appuyez sur une touche pour continuer")
             next = getch()
     return

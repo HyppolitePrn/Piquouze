@@ -229,7 +229,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         citoyen3 = "1"
         duty = "0"
         duty_map = "0"
-        player = [["Stats:", "Pv:", 10, "/", 10, "/ Attaque:", 3, "/ Défense:", 0, "/ Lvl:", 1, "/ XP:", 0],
+        player = [["Stats:", "Pv:", 10, "/", 10, "\n    Attaque:", 3, "\n    Défense:", 0, "\n    Lvl:", 1, "\n    XP:", 0],
         ["Inventaire:", "Gel Hydroalcoolique", "Retour"],
         ["Equipement:"],
         ["Argent:", 0]]
