@@ -1,17 +1,17 @@
 from random import randint
 from os import system
 def pierre_feuille_ciseaux(os):
-  print("Débbut du programme")
+  print("Début du programme")
   victoire_ordi=0
   nul=0
   victoire_player=0
   while True:
-    print("Vous avez ", victoire_player,"points et l'ordinateur a ", victoire_ordi,"points")
+    print("Vous avez", victoire_player,"points et l'ordinateur a", victoire_ordi,"points")
     joueur=input("Entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
     while joueur!="p" and joueur!="f" and joueur!="c" and joueur!="q":
       joueur=input("Entrez votre coup: (p)ierre, (f)euille, (c)iseaux ou (q)uitter: " )
     if joueur=="q":
-      print("Vous avez quitté le jeu ")
+      print("Vous avez quitté le jeu")
       print("Fin du programme")
       return
 
@@ -39,7 +39,7 @@ def pierre_feuille_ciseaux(os):
         system("cls")
 
     if joueur==ordi:
-      print("Partie nulle!")
+      print("Partie nulle !")
     elif joueur=="p" and ordi=="c":
       print("Vous avez gagné ?")
       victoire_player=  victoire_player+1  
@@ -68,14 +68,14 @@ def lancer_de(os):
   i = 1
   find_me = randint(1, 6)
   while i < 4:
-    print("Lancez le dé et essayez de trouver la valeur cachée. Vous avez trois essais")
+    print("Lancez le dé et essayez de trouver la valeur cachée. Vous avez trois essais.")
     print("Manche", i)
     lance = input("Pour lancer votre dé faites espace puis entrée: ")
     while lance != " ":
       lance = input("Pour lancer votre dé faites espace puis entrée: ")
     values = randint(1, 6)
     if values == find_me:
-      print("Vous avez trouvé le bon chiffre!!")
+      print("Vous avez trouvé le bon chiffre !!")
       return "win"
     if os == "mac":
         system("clear")
@@ -83,11 +83,11 @@ def lancer_de(os):
         system("cls")
     print("La valeur de votre dé est: ", values)
     i = i + 1
-  print("Vous avez perdu!!")
+  print("Vous avez perdu !!")
   return "loose"
 
 def just_prix():
-  print("Bonne Chance! ")
+  print("Bonne Chance !")
   values=randint(1,500) 
   i=0
   while i<10:
