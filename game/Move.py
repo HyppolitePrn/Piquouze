@@ -7,6 +7,7 @@ from duty_free import duty_free
 from liste import menu_ig
 from mini_jeux import *
 from pickle import *
+from ends import *
 
 def move(direction, position):
     shape = "[ ]"
@@ -194,6 +195,14 @@ def save_game(localisation, player, Parking, Avion, Hall, Terminal, duty_map, du
     dump(list_sell, save_variable)
     save_variable.close()
     return
+
+def end(player,os):
+    if player[0][10] <= 2:
+        good_ending(os)
+    elif player[0][10] > 2 and player[0][10] < 5:
+        ending(os)
+    else:
+        bad_ending(os)
 
 
 def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
@@ -420,6 +429,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 if beat_the_boss.lower() == "o":
                     fight_print(os)
                     battle(player, boss, os)
+                    end(player,os)
                     break
             else:
                 Avion = move(direction, Avion)

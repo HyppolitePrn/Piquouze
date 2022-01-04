@@ -1,9 +1,8 @@
 from time import sleep
 from getch_on_mac import getch_mac
 from os import system
-from Mac_or_wind import os
 
-def good_ending():
+def good_ending(os):
     if os == "mac":
         system("clear")
     elif os == "windows":
@@ -17,7 +16,7 @@ def good_ending():
     print("\nAppuyez sur Entrée pour quitter...")
     return
 
-def ending():
+def ending(os):
     if os == "mac":
         system("clear")
     elif os == "windows":
@@ -31,7 +30,7 @@ def ending():
     print("\nAppuyez sur Entrée pour quitter...")
     return
 
-def bad_ending():
+def bad_ending(os):
     if os == "mac":
         system("clear")
     elif os == "windows":

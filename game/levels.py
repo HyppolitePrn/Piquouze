@@ -15,10 +15,10 @@ def lvl_up(player):
         sleep(1)
     return player
 
-def end(player):
-    if player[0][8] <= 2:
-        good_ending()
-    elif player[0][8] > 2 and player[0][8] < 5:
-        ending()
+def end(player,os):
+    if player[0][10] <= 2:
+        good_ending(os)
+    elif player[0][10] > 2 and player[0][10] < 5:
+        ending(os)
     else:
-        bad_ending()
+        bad_ending(os)
