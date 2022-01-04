@@ -60,7 +60,7 @@ def check(player, monster):
         print("Vous êtes morts...")
         return False
 
-def vaccine(monster, os):
+def vaccine(monster, os, player):
     if monster[0] <= 3:
         print("Vous avez sauvé le", monster[3])
         sleep(1)
@@ -160,7 +160,7 @@ def battle(player, monster, os):
             else:
                 break
         while choice == "vax":
-            vax = vaccine(monster, os)
+            vax = vaccine(monster, os, player)
             if vax == True:
                 player[3][1] += 10
                 print("Pour vous remercier, la personne vous donne 10 d'argent")
