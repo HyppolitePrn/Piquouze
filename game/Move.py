@@ -429,6 +429,8 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 if beat_the_boss.lower() == "o":
                     fight_print(os)
                     battle(player, boss, os)
+                    if player[0][2] <= 0:
+                        break 
                     end(player,os)
                     break
             else:
