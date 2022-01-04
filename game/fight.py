@@ -1,6 +1,5 @@
 from os import system
 from time import sleep
-from levels import lvl_up
 from liste import list_fight
 
 def inventory(player, os):
