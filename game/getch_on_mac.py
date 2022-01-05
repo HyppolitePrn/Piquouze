@@ -1,4 +1,5 @@
 
+# simulation de la fonction getch de windows(non compatible sur mac) pour les déplacement dans le menu
 def getch_mac(char_width=1):
    import tty, termios, sys
    fd = sys.stdin.fileno()

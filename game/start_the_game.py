@@ -2,6 +2,7 @@ from liste import start
 from Mac_or_wind import os
 from os import system
 
+# gestion d'os
 def start_with_os(os):
     if os.lower() == "linux":
         os = "mac"

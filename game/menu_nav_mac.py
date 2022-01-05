@@ -4,6 +4,7 @@ from getch_on_mac import *
 from liste import start
 from about import info
 
+# identique au menu nav mais avec la fonction getch_on_mac (dans un autre fichier pour eviter les bug d'import)
 def menu_nav_mac(menu):
     print("\n")
     i = 1

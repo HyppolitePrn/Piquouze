@@ -1,6 +1,5 @@
 from os import system
 from time import sleep
-from levels import lvl_up
 from liste import list_fight
 
 def inventory(player, os):
@@ -36,7 +35,7 @@ def inventory(player, os):
 def monster_attack(player, monster, os):
     print(f"Le {monster[3]} attaque !")
     sleep(1)
-    monsterDamage = monster[1] - player[0][10]
+    monsterDamage = monster[1] - player[0][8]
     if monsterDamage > 0:
         player[0][2] = player[0][2] - monsterDamage
         print("Il vous inflige", monsterDamage, "dégats")
@@ -60,10 +59,11 @@ def check(player, monster):
         print("Vous êtes morts...")
         return False
 
-def vaccine(monster, os):
+def vaccine(monster, os, player):
     if monster[0] <= 3:
         print("Vous avez sauvé le", monster[3])
         sleep(1)
+        player[0][12] += 2
         print("Vous avez gagné 2 points d'expérience !")
         sleep(1)
         if os == "mac":
@@ -100,12 +100,12 @@ def player_atk(player, monster, os):
 
 
 def lvl_up(player):
-    if player[0][12] == 10:
+    if player[0][12] >= 10:
         player[0][10] += 1
         player[0][2] += 3
         player[0][4] += 3
         player[0][6] += 1
-        player[0][12] = 0
+        player[0][12] = player[0][12] - 10
         print("Lvl up!")
         sleep(1)
         print("Vous gagnez +3 Pvs, +1 Attaque")
@@ -159,7 +159,7 @@ def battle(player, monster, os):
             else:
                 break
         while choice == "vax":
-            vax = vaccine(monster, os)
+            vax = vaccine(monster, os, player)
             if vax == True:
                 player[3][1] += 10
                 print("Pour vous remercier, la personne vous donne 10 d'argent")

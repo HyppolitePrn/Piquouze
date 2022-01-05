@@ -7,7 +7,9 @@ from duty_free import duty_free
 from liste import menu_ig
 from mini_jeux import *
 from pickle import *
+from ends import *
 
+# gestion du déplacement dans une liste bidi
 def move(direction, position):
     shape = "[ ]"
     user = "[Ï]"
@@ -18,10 +20,10 @@ def move(direction, position):
             while j < len(position[i]):
                 if position[i][j] == user:
                     if j-1 < 0:
-                        position[i][j] = user
+                        position[i][j] = user #gestion d'erreur en cas de sortie de carte
                     else:
-                        position[i][j] = shape
-                        position[i][j-1] = user
+                        position[i][j] = shape # suprime l'ancienne position du joueur
+                        position[i][j-1] = user # ajoute nouvelle position du joueur
                     return position
                 j = j + 1
             i = i + 1
@@ -31,10 +33,10 @@ def move(direction, position):
             while j < len(position[i]):
                 if position[i][j] == user:
                     if i-1 < 0:
-                        position[i][j] = user
+                        position[i][j] = user #gestion d'erreur en cas de sortie de carte
                     else:
-                        position[i][j] = shape
-                        position[i-1][j] = user
+                        position[i][j] = shape # suprime l'ancienne position du joueur
+                        position[i-1][j] = user # ajoute nouvelle position du joueur
                     return position
                 j = j + 1
             i = i + 1
@@ -43,11 +45,11 @@ def move(direction, position):
             j = 0
             while j < len(position[i]):
                 if position[i][j] == user:
-                    if j+1 >= len(position[i]):
-                        position[i][j] = user
+                    if j+1 >= len(position[i]): 
+                        position[i][j] = user #gestion d'erreur en cas de sortie de carte
                     else:
-                        position[i][j] = shape
-                        position[i][j+1] = user
+                        position[i][j] = shape # suprime l'ancienne position du joueur
+                        position[i][j+1] = user # ajoute nouvelle position du joueur
                     return position
                 j = j + 1
             i = i + 1
@@ -57,26 +59,27 @@ def move(direction, position):
             while j < len(position[i]):
                 if position[i][j] == user:
                     if i+1 >= len(position):
-                        position[i][j] = user
+                        position[i][j] = user #gestion d'erreur en cas de sortie de carte
                     else:
-                        position[i][j] = shape
-                        position[i+1][j] = user
+                        position[i][j] = shape # suprime l'ancienne position du joueur
+                        position[i+1][j] = user # ajoute nouvelle position du joueur
                     return position
                 j = j + 1
             i = i + 1
 
     return position
 
+# gestion de l'input pour le déplacement ou l'ouverture du menu dans le jeux
 def action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player):
     stop = " "
     save = " "
     map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-    print("   Tapez 'menu' pour accéder aux contenues associé.")
+    print("   Tapez 'menu' pour accéder aux contenus associés.")
     print("   Pour vous déplacer")
     direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
     while direction.lower() != "z" and direction.lower() != "s" and direction.lower() != "q" and direction.lower() != "d" and direction.lower() != "stop" and direction.lower() != "menu":
             map_print(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map)
-            print("   Tapez 'menu' pour accéder aux contenues associé.")
+            print("   Tapez 'menu' pour accéder aux contenus associé.")
             print("   Pour vous déplacer")
             direction = input("   Ecrivez 'q' pour gauche, 'z' pour haut, 'd' pour droite, 's' pour bas: ")
     if direction.lower() == "stop":
@@ -127,6 +130,7 @@ def action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc
                     save = "save"
     return direction.lower(), stop, save
 
+# vérification de la position dans une liste (utile quand on charge une partie pour trouver le personnage)
 def verif_position(Avion, Terminal, Hall, Parking):
     user = "[Ï]"
     i = 0
@@ -167,7 +171,8 @@ def verif_position(Avion, Terminal, Hall, Parking):
                 return localisation
             j = j + 1
         i = i + 1
-    
+
+# fonction pour sauvegarder le jeux
 def save_game(localisation, player, Parking, Avion, Hall, Terminal, duty_map, duty, citoyen3, citoyen2, citoyen1, antivax1,antivax2, antivax3, antivax4, antivax5, antivax6, antivax7, avion_loc, hall_loc, terminal_loc, list_sell):
     save_variable = open("save.pickle","wb")
     dump(localisation, save_variable)
@@ -195,7 +200,18 @@ def save_game(localisation, player, Parking, Avion, Hall, Terminal, duty_map, du
     save_variable.close()
     return
 
+# fonction pour appeler les différentes fin du jeux
+def end(player,os):
+    if player[0][10] <= 2:
+        good_ending(os)
+    elif player[0][10] > 2 and player[0][10] < 5:
+        ending(os)
+    else:
+        bad_ending(os)
 
+
+# fonction main, appelle toute les fonctions et défini les emplacements sur la carte
+# ainsi que les portes entre les différentes liste bidi
 def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
     stop = " "
     user = "[Ï]"
@@ -203,7 +219,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
     xavitna = [5, 4, 0, "Xavitna"]
     seukitpes = [8, 3, 0, "Seukitpes"]
     boss = [50, 6, 0, "Boss"]
-    if start_var == "new":
+    if start_var == "new": # défini les variable du début du jeux si nouvelle partie
         localisation = Parking
         hall_loc = "0"
         terminal_loc = "0"
@@ -220,7 +236,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         citoyen3 = "1"
         duty = "0"
         duty_map = "0"
-        player = [["Stats:", "Pv:", 10, "/", 10, "/ Attaque:", 3, "/ Défense:", 0, "/ Lvl:", 1, "/ XP:", 0],
+        player = [["Stats:", "Pv:", 10, "/", 10, "\n    Attaque:", 3, "\n    Défense:", 0, "\n    Lvl:", 1, "\n    XP:", 0],
         ["Inventaire:", "Gel Hydroalcoolique", "Retour"],
         ["Equipement:"],
         ["Argent:", 0]]
@@ -230,9 +246,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         "Masque chirurgical + 1 défense : 100",
         "Blouse de bataille + 3 défense : 100",
         "Seringue en adamantium +3 attaque : 100",
-        "Retour"
-]
-    elif start_var == "load":
+        "Retour"]
+
+    # défini les variables si charger une partie
+    elif start_var == "load": 
         loading = open("save.pickle","rb")
         localisation = load(loading)
         player = load(loading)
@@ -259,10 +276,10 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
         loading.close()
 
     
-
+    # boucle main, ne sort que en quittant le jeu ou en mourrant
     while stop == " ":
         save = " "
-        xavitna = [5, 4, 0, "Xavitna"]
+        xavitna = [5, 4, 0, "Xavitna"] 
         seukitpes = [8, 3, 0, "Seukitpes"]
         direction, stop, save = action(Avion, Terminal, Hall, Parking, os, hall_loc, terminal_loc, avion_loc, duty, duty_map, player)
         if save == "save":
@@ -420,6 +437,9 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 if beat_the_boss.lower() == "o":
                     fight_print(os)
                     battle(player, boss, os)
+                    if player[0][2] <= 0:
+                        break 
+                    end(player,os)
                     break
             else:
                 Avion = move(direction, Avion)
@@ -480,7 +500,7 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
                 if player[0][2] <= 0:
                     return
                 antivax7 = "0"
-        # je défini le zone de duty freeing
+        # je défini le zone de duty free
         if Hall[2][0] == user:
             duty_print(os)
             shop_choice = " "
@@ -537,13 +557,14 @@ def localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var):
 
 
 
-
+# Fonction appelée si nouvelle partie (défini la position de départ)
 def first_localisation():
     user = "[Ï]"
     Parking[4][3] = user
     start_var = "new"
     return localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var)
 
+# Fonction appelée si charger une partie
 def load_localisation():
     start_var = "load"
     return localisation_of_door_enemy_item(Avion, Terminal, Hall, Parking, start_var)

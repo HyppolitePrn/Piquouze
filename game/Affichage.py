@@ -152,6 +152,7 @@ def avion_print(os):
         system("cls")
     return
 
+#affichage des stats
 def stat_print(player, os):
     next = "["
     while next == "[":
@@ -172,7 +173,8 @@ def stat_print(player, os):
             print("    appuyez sur une touche pour continuer")
             next = getch()
     return
-        
+
+# affichage de l'équipement
 def equipement_print(player, os):
     next = "["
     while next == "[":
@@ -181,7 +183,8 @@ def equipement_print(player, os):
             system("clear")
             print(("________")* 11)
             print("\n")
-            print("   ", *player[2])
+            for value in player[2]:
+                print("   ", value)
             print("    appuyez sur une touche pour continuer")
             next = getch_mac()
         elif os == "windows":
@@ -189,11 +192,13 @@ def equipement_print(player, os):
             system("cls")
             print(("________")* 11)
             print("\n")
-            print("   ", *player[2])
+            for value in player[2]:
+                print("   ", value)
             print("    appuyez sur une touche pour continuer")
             next = getch()
     return
 
+# affichage de l'argent
 def argent_print(player, os):
     next = "["
     while next == "[":
@@ -215,7 +220,7 @@ def argent_print(player, os):
             next = getch()
     return
 
-
+# affichage victoire mini jeux
 def victoir_mini_jeux_print(os):
     next = "["
     while next == "[":
@@ -237,6 +242,7 @@ def victoir_mini_jeux_print(os):
             next = getch()
     return
 
+# affichage defaite mini jeux
 def defaite_mini_jeux_print(os):
     next = "["
     while next == "[":

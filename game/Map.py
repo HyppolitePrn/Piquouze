@@ -1,4 +1,6 @@
 from os import system
+
+# affiche la map
 def map_print(Avion, Terminal, Hall, Parking,os, hall_loc, terminal_loc, avion_loc, duty, duty_map):
     Boss = "[Ä]"
     space = " "
@@ -6,7 +8,7 @@ def map_print(Avion, Terminal, Hall, Parking,os, hall_loc, terminal_loc, avion_l
         system("clear")
     elif os == "windows":
         system("cls")
-    print(("________")* 11)
+    print(("_______")* 17)
     print("\n")
     if avion_loc == "1":
         print((space * 6), "Boss", Boss)
@@ -21,10 +23,11 @@ def map_print(Avion, Terminal, Hall, Parking,os, hall_loc, terminal_loc, avion_l
     for v in Parking:
         print((space * 29), "Parking", v)
     print("\n")
-    print(("________")* 11)
+    print(("_______")* 17)
     if duty == "1" and duty_map == "1":
         Hall[2][0] = "[$]"
 
+# création d'une liste bidi
 def map_create(l):
     shape = "[ ]"
     i = 0
@@ -38,6 +41,7 @@ def map_create(l):
         i = i + 1
     return liste
 
+# défini la taille des éléments de la carte
 def map_place():
     Avion = map_create(5)
     Terminal = map_create(4)
