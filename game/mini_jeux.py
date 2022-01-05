@@ -1,5 +1,6 @@
 from random import randint
 from os import system
+
 def pierre_feuille_ciseaux(os):
   print("Début du programme")
   victoire_ordi=0
