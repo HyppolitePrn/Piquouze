@@ -9,7 +9,7 @@ Réalisé par :
 <br /> -Jean-Baptiste Migone    (Système de combat, trame générale, gestion des stats monstres/joueur, inventaire)
 ______________________________________
 
-Pour lancer le jeu :
+Pour lancer le jeu (Windows 11 non supporté:
 
 Sur Windows :
     py game/start_the_game.py
