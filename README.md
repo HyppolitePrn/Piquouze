@@ -3,15 +3,15 @@ Projet RPG textuel en Python W1 HETIC
 
 Réalisé par :
 
-<br /> -Abdoulaye Diallo
-<br /> -Adrien Quimbre
-<br /> -Hyppolite Pernot
-<br /> -Jean-Baptiste Migone
+<br /> -Abdoulaye Diallo        (Mini-jeux)
+<br /> -Adrien Quimbre          (Carte et mouvements, système de sauvegarde, adaptation du menu sur mac)
+<br /> -Hyppolite Pernot        (Menu nav, listes, shop)
+<br /> -Jean-Baptiste Migone    (Système de combat, trame générale, gestion des stats monstres/joueur, inventaire)
 ______________________________________
 
 Pour lancer le jeu :
 
-Sur windows :
+Sur Windows :
     py game/start_the_game.py
 
 Sur MacOS : 
@@ -28,3 +28,7 @@ Sur windows :
 
 Sur mac :
    Z et S
+______________________________________
+<br /> -La demande de l'OS en début de jeu est nécessaire pour que certaines commandes, qui fonctionnent de façon différentes sur MacOS et Windows, puissent être exécutées (clear, getch ...)
+
+<br /> -Le jeu a plusieurs fins différentes, dépendant de vos actions au cours de la partie
